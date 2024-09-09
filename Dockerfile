@@ -26,7 +26,6 @@ RUN ["pip", "install", "-r", "requirements.txt"]
 
 COPY . /app
 RUN ["chmod", "+x", "/app/entrypoint/entrypoint.sh"]
-RUN ["mv", ".env_template", ".env"]
 RUN ["python", "/app/manage.py", "collectstatic", "--noinput"]
 ENTRYPOINT ["/app/entrypoint/entrypoint.sh"]
 
